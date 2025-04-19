@@ -1,0 +1,448 @@
+<Activity mc:Ignorable="sap sap2010" x:Class="Main" VisualBasic.Settings="{x:Null}" sap2010:WorkflowViewState.IdRef="ActivityBuilder_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:p="http://schemas.uipath.com/workflow/activities/intelligentocr" xmlns:p1="http://schemas.uipath.com/workflow/activities/ocr" xmlns:p2="http://schemas.uipath.com/workflow/activities/intelligentocr/classification" xmlns:p3="http://schemas.uipath.com/workflow/activities/document-processing-contracts/dom" xmlns:p4="http://schemas.uipath.com/workflow/activities/document-processing-contracts/classification" xmlns:p5="http://schemas.uipath.com/workflow/activities/intelligentocr/extraction" xmlns:p6="http://schemas.uipath.com/workflow/activities/documentunderstanding-ml" xmlns:p7="http://schemas.uipath.com/workflow/activities/document-processing-contracts/extraction" xmlns:p8="http://schemas.uipath.com/workflow/activities/document-processing-contracts/results" xmlns:p9="http://schemas.uipath.com/workflow/activities/document-processing-contracts/taxonomy" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:sc="clr-namespace:System.ComponentModel;assembly=System.ComponentModel.TypeConverter" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:sd="clr-namespace:System.Drawing;assembly=System.Drawing.Common" xmlns:sd1="clr-namespace:System.Drawing;assembly=System.Drawing.Primitives" xmlns:sd2="clr-namespace:System.Data;assembly=System.Data.Common" xmlns:si="clr-namespace:System.IO;assembly=System.Private.CoreLib" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <TextExpression.NamespacesForImplementation>
+    <sco:Collection x:TypeArguments="x:String">
+      <x:String>System.Activities</x:String>
+      <x:String>System.Activities.Statements</x:String>
+      <x:String>System.Activities.Expressions</x:String>
+      <x:String>System.Activities.Validation</x:String>
+      <x:String>System.Activities.XamlIntegration</x:String>
+      <x:String>Microsoft.VisualBasic</x:String>
+      <x:String>Microsoft.VisualBasic.Activities</x:String>
+      <x:String>System</x:String>
+      <x:String>System.Collections</x:String>
+      <x:String>System.Collections.Generic</x:String>
+      <x:String>System.Collections.ObjectModel</x:String>
+      <x:String>System.Data</x:String>
+      <x:String>System.Diagnostics</x:String>
+      <x:String>System.Drawing</x:String>
+      <x:String>System.IO</x:String>
+      <x:String>System.Linq</x:String>
+      <x:String>System.Net.Mail</x:String>
+      <x:String>System.Xml</x:String>
+      <x:String>System.Xml.Linq</x:String>
+      <x:String>UiPath.Core</x:String>
+      <x:String>UiPath.Core.Activities</x:String>
+      <x:String>System.Windows.Markup</x:String>
+      <x:String>GlobalVariablesNamespace</x:String>
+      <x:String>GlobalConstantsNamespace</x:String>
+      <x:String>System.Linq.Expressions</x:String>
+      <x:String>System.Runtime.Serialization</x:String>
+      <x:String>UiPath.DocumentProcessing.Contracts.Taxonomy</x:String>
+      <x:String>UiPath.IntelligentOCR.Activities.TaxonomyManagement</x:String>
+      <x:String>UiPath.Shared.Activities</x:String>
+      <x:String>System.Reflection</x:String>
+      <x:String>UiPath.Shared.Activities.Business</x:String>
+      <x:String>UiPath.IntelligentOCR.Activities.Digitization</x:String>
+      <x:String>UiPath.DocumentProcessing.Contracts.Dom</x:String>
+      <x:String>UiPath.Vision.OCR</x:String>
+      <x:String>UiPath.OCR.Contracts</x:String>
+      <x:String>UiPath.OCR.Activities</x:String>
+      <x:String>UiPath.OCR.Contracts.Activities</x:String>
+      <x:String>UiPath.DocumentProcessing.Contracts</x:String>
+      <x:String>UiPath.DocumentProcessing.Contracts.Results</x:String>
+      <x:String>UiPath.IntelligentOCR.Activities.DocumentClassification</x:String>
+      <x:String>UiPath.DocumentProcessing.Contracts.Classification</x:String>
+      <x:String>UiPath.IntelligentOCR.Activities.DataExtraction</x:String>
+      <x:String>UiPath.DU.Shared.Utils</x:String>
+      <x:String>UiPath.DocumentProcessing.Contracts.DataExtraction</x:String>
+      <x:String>System.Xml.Serialization</x:String>
+      <x:String>UiPath.DocumentUnderstanding.ML.Activities</x:String>
+      <x:String>UiPath.SmartData.PositionBasedExtraction.Storage</x:String>
+      <x:String>UiPath.DU.Shared.Actions</x:String>
+      <x:String>UiPath.IntelligentOCR.Activities.ValidationStation</x:String>
+      <x:String>System.ComponentModel</x:String>
+      <x:String>UiPath.Excel</x:String>
+      <x:String>UiPath.Platform.ResourceHandling</x:String>
+      <x:String>UiPath.Excel.Activities</x:String>
+    </sco:Collection>
+  </TextExpression.NamespacesForImplementation>
+  <TextExpression.ReferencesForImplementation>
+    <sco:Collection x:TypeArguments="AssemblyReference">
+      <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
+      <AssemblyReference>mscorlib</AssemblyReference>
+      <AssemblyReference>PresentationCore</AssemblyReference>
+      <AssemblyReference>PresentationFramework</AssemblyReference>
+      <AssemblyReference>System</AssemblyReference>
+      <AssemblyReference>System.Activities</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.TypeConverter</AssemblyReference>
+      <AssemblyReference>System.Core</AssemblyReference>
+      <AssemblyReference>System.Data</AssemblyReference>
+      <AssemblyReference>System.Data.Common</AssemblyReference>
+      <AssemblyReference>System.Data.DataSetExtensions</AssemblyReference>
+      <AssemblyReference>System.Drawing</AssemblyReference>
+      <AssemblyReference>System.Drawing.Common</AssemblyReference>
+      <AssemblyReference>System.Drawing.Primitives</AssemblyReference>
+      <AssemblyReference>System.Linq</AssemblyReference>
+      <AssemblyReference>System.Net.Mail</AssemblyReference>
+      <AssemblyReference>System.ObjectModel</AssemblyReference>
+      <AssemblyReference>System.Private.CoreLib</AssemblyReference>
+      <AssemblyReference>System.Xaml</AssemblyReference>
+      <AssemblyReference>System.Xml</AssemblyReference>
+      <AssemblyReference>System.Xml.Linq</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UiAutomation.Activities</AssemblyReference>
+      <AssemblyReference>WindowsBase</AssemblyReference>
+      <AssemblyReference>UiPath.Studio.Constants</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities.Design</AssemblyReference>
+      <AssemblyReference>System.Memory.Data</AssemblyReference>
+      <AssemblyReference>System.Console</AssemblyReference>
+      <AssemblyReference>System.Security.Permissions</AssemblyReference>
+      <AssemblyReference>System.Configuration.ConfigurationManager</AssemblyReference>
+      <AssemblyReference>System.ComponentModel</AssemblyReference>
+      <AssemblyReference>System.Memory</AssemblyReference>
+      <AssemblyReference>System.Private.Uri</AssemblyReference>
+      <AssemblyReference>System.Linq.Expressions</AssemblyReference>
+      <AssemblyReference>System.Private.ServiceModel</AssemblyReference>
+      <AssemblyReference>System.Private.DataContractSerialization</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization.Formatters</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization.Primitives</AssemblyReference>
+      <AssemblyReference>UiPath.DocumentProcessing.Contracts</AssemblyReference>
+      <AssemblyReference>UiPath.IntelligentOCR.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.OCR.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.DocumentUnderstanding.ML.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationCore</AssemblyReference>
+      <AssemblyReference>UiPath.Mail.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Testing.Activities</AssemblyReference>
+      <AssemblyReference>System.Reflection.DispatchProxy</AssemblyReference>
+      <AssemblyReference>System.Reflection.TypeExtensions</AssemblyReference>
+      <AssemblyReference>System.Reflection.Metadata</AssemblyReference>
+      <AssemblyReference>System.Reflection.MetadataLoadContext</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext.Activities</AssemblyReference>
+      <AssemblyReference>System.IO.FileSystem.Watcher</AssemblyReference>
+      <AssemblyReference>System.IO.Packaging</AssemblyReference>
+      <AssemblyReference>System.IO.FileSystem.AccessControl</AssemblyReference>
+      <AssemblyReference>System.IO.FileSystem.DriveInfo</AssemblyReference>
+      <AssemblyReference>System.Linq.Async</AssemblyReference>
+      <AssemblyReference>System.Collections</AssemblyReference>
+      <AssemblyReference>System.Collections.NonGeneric</AssemblyReference>
+      <AssemblyReference>UiPath.Vision.Core</AssemblyReference>
+      <AssemblyReference>UiPath.OCR.Core</AssemblyReference>
+      <AssemblyReference>UiPath.OCR.Contracts</AssemblyReference>
+      <AssemblyReference>UiPath.IntelligentOCR</AssemblyReference>
+      <AssemblyReference>System.Private.Xml</AssemblyReference>
+      <AssemblyReference>UiPath.DocumentUnderstanding.ML.Activities.Design</AssemblyReference>
+      <AssemblyReference>UiPath.SmartData.PositionBasedExtraction</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.EventBasedAsync</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.Primitives</AssemblyReference>
+      <AssemblyReference>System.Data.SqlClient</AssemblyReference>
+      <AssemblyReference>UiPath.Excel</AssemblyReference>
+      <AssemblyReference>UiPath.Platform</AssemblyReference>
+    </sco:Collection>
+  </TextExpression.ReferencesForImplementation>
+  <Sequence sap2010:Annotation.AnnotationText="Log messages and load document taxonomy for processing" DisplayName="Main Sequence" sap:VirtualizedContainerService.HintSize="1044,5046" sap2010:WorkflowViewState.IdRef="Sequence_1">
+    <Sequence.Variables>
+      <Variable x:TypeArguments="p9:DocumentTaxonomy" Name="DU_taxonomy" />
+    </Sequence.Variables>
+    <sap:WorkflowViewStateService.ViewState>
+      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+        <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+      </scg:Dictionary>
+    </sap:WorkflowViewStateService.ViewState>
+    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="1020,173" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Trace" Message="[&quot;Starting beim Loading the Taxonony, wo die MetaDaten defninert wurden &quot;]" />
+    <p:LoadTaxonomy DisplayName="Load Taxonomy" sap:VirtualizedContainerService.HintSize="1020,136" sap2010:WorkflowViewState.IdRef="LoadTaxonomy_1" Taxonomy="[DU_taxonomy]" />
+    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="1020,173" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="Trace" Message="[&quot;Eine Schleife bilden, da wir mehrere pdfs haben&quot;]" />
+    <ui:ForEachFileX DisplayName="For Each File in Folder" Folder="C:\UiPath\DU_Mitgliedbescheinigungen\DocumentUnderstanding_Handwritten_daten\data" sap:VirtualizedContainerService.HintSize="1020,4510" sap2010:WorkflowViewState.IdRef="ForEachFileX_1" IncludeSubDirectories="False" OrderBy="NameAscFirst" SkipFolderWithoutPermission="False">
+      <ui:ForEachFileX.Body>
+        <ActivityAction x:TypeArguments="si:FileInfo, x:Int32">
+          <ActivityAction.Argument1>
+            <DelegateInArgument x:TypeArguments="si:FileInfo" Name="CurrentFile" />
+          </ActivityAction.Argument1>
+          <ActivityAction.Argument2>
+            <DelegateInArgument x:TypeArguments="x:Int32" Name="CurrentIndex" />
+          </ActivityAction.Argument2>
+          <Sequence sap:VirtualizedContainerService.HintSize="986,4229" sap2010:WorkflowViewState.IdRef="Sequence_5">
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+            <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="952,4169" sap2010:WorkflowViewState.IdRef="Sequence_3">
+              <Sequence.Variables>
+                <Variable x:TypeArguments="x:String" Name="str_DocumentText" />
+                <Variable x:TypeArguments="p3:Document" Name="DOM" />
+                <Variable x:TypeArguments="p8:ClassificationResult[]" Name="ClassificationResults" />
+                <Variable x:TypeArguments="p8:ExtractionResult" Name="str_ExtractionResults" />
+                <Variable x:TypeArguments="p8:ExtractionResult" Name="str_Validation_Results" />
+                <Variable x:TypeArguments="sd2:DataSet" Name="DU_dt" />
+                <Variable x:TypeArguments="x:String" Name="str_API_KEY" />
+              </Sequence.Variables>
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+              <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="918,173" sap2010:WorkflowViewState.IdRef="LogMessage_3" Level="Trace" Message="[&quot;Digitalisieren die Daten Using the OCR&quot;]" />
+              <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="918,173" sap2010:WorkflowViewState.IdRef="LogMessage_4" Level="Trace" Message="[&quot;Starting mit &quot; + CurrentFile.Name]" />
+              <p:DigitizeDocument ApplyOcrMigrated="False" ApplyOcrOnPdf="Auto" DegreeOfParallelism="-1" DetectCheckboxes="True" DisplayName="Digitize Document" DocumentObjectModel="[DOM]" DocumentPath="[CurrentFile.FullName]" DocumentText="[str_DocumentText]" ForceApplyOCR="False" sap:VirtualizedContainerService.HintSize="918,329" sap2010:WorkflowViewState.IdRef="DigitizeDocument_1">
+                <p:DigitizeDocument.OCREngine>
+                  <ActivityFunc x:TypeArguments="sd:Image, x:String, scg:IEnumerable(scg:KeyValuePair(sd1:Rectangle, x:String))" Argument1="{x:Reference __ReferenceID0}" Argument2="{x:Reference __ReferenceID1}">
+                    <p1:UiPathDocumentOCR Endpoint="{x:Null}" Output="{x:Null}" Text="{x:Null}" UseLocalServer="{x:Null}" ApiKey="[str_API_KEY]" ComputeSkewAngle="False" DisplayName="UiPath Document OCR" ExtractWords="True" sap:VirtualizedContainerService.HintSize="312,25" sap2010:WorkflowViewState.IdRef="UiPathDocumentOCR_1" Language="auto" NoopExecution="False" Profile="None" Scale="1" Timeout="100000">
+                      <p1:UiPathDocumentOCR.Image>
+                        <InArgument x:TypeArguments="sd:Image">
+                          <DelegateArgumentValue x:TypeArguments="sd:Image" sap2010:WorkflowViewState.IdRef="DelegateArgumentValue`1_1">
+                            <DelegateInArgument x:TypeArguments="sd:Image" x:Name="__ReferenceID0" Name="Image" />
+                          </DelegateArgumentValue>
+                        </InArgument>
+                      </p1:UiPathDocumentOCR.Image>
+                      <p1:UiPathDocumentOCR.PredictionId>
+                        <InArgument x:TypeArguments="x:String">
+                          <DelegateArgumentValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="DelegateArgumentValue`1_2">
+                            <DelegateInArgument x:TypeArguments="x:String" x:Name="__ReferenceID1" Name="PredictionId" />
+                          </DelegateArgumentValue>
+                        </InArgument>
+                      </p1:UiPathDocumentOCR.PredictionId>
+                    </p1:UiPathDocumentOCR>
+                  </ActivityFunc>
+                </p:DigitizeDocument.OCREngine>
+              </p:DigitizeDocument>
+              <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="918,173" sap2010:WorkflowViewState.IdRef="LogMessage_5" Level="Info" Message="[str_DocumentText]" />
+              <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="918,173" sap2010:WorkflowViewState.IdRef="LogMessage_6" Level="Trace" Message="[&quot;Starting with Classification&quot;]" />
+              <p2:ClassifyDocumentScope ClassificationResults="[ClassificationResults]" DisplayName="Classify Document Scope" DocumentObjectModel="[DOM]" DocumentPath="[CurrentFile.FullName]" DocumentText="[str_DocumentText]" sap:VirtualizedContainerService.HintSize="918,564" sap2010:WorkflowViewState.IdRef="ClassifyDocumentScope_1" Taxonomy="[DU_taxonomy]" TaxonomyConfiguration="{}{&quot;TaxonomyMappings&quot;:{&quot;UI5b28ae9970c44de9bfa7b796dfba9a48&quot;:{&quot;DocumentTypeMappings&quot;:{&quot;Mitgleidbescheinigungen.NoCategory.Handwritten_Data&quot;:{&quot;OriginalDocumentTypeId&quot;:&quot;Mitgleidbescheinigungen.NoCategory.Handwritten_Data&quot;,&quot;ClassifierDocumentTypeId&quot;:null,&quot;IsDocumentTypeIdMapped&quot;:true}}}},&quot;ClassifierMinimumConfidence&quot;:{&quot;UI5b28ae9970c44de9bfa7b796dfba9a48&quot;:&quot;40&quot;},&quot;DocumentTypesByPersistenceId&quot;:{&quot;UI5b28ae9970c44de9bfa7b796dfba9a48&quot;:[]}}">
+                <p2:ClassifyDocumentScope.Classifiers>
+                  <p2:IntelligentKeywordClassifier LearningData="{x:Null}" TimeoutMs="{x:Null}" ApiKey="[str_API_KEY]" DisplayName="Intelligent Keyword Classifier" Endpoint="https://du.uipath.com/svc/intelligentkeywords" sap:VirtualizedContainerService.HintSize="290,210" sap2010:WorkflowViewState.IdRef="IntelligentKeywordClassifier_1" LearningFilePath="DocumentProcessing\classfication.json" PerformDocumentSplitting="True" PersistenceId="UI5b28ae9970c44de9bfa7b796dfba9a48" SendDocumentsForAlgorithmImprovements="True" UsePageNumbers="False">
+                    <p2:IntelligentKeywordClassifier.ClassifierResult>
+                      <OutArgument x:TypeArguments="p4:ClassifierResult">
+                        <DelegateArgumentReference x:TypeArguments="p4:ClassifierResult">
+                          <DelegateOutArgument x:TypeArguments="p4:ClassifierResult" Name="ClassifierResult" />
+                        </DelegateArgumentReference>
+                      </OutArgument>
+                    </p2:IntelligentKeywordClassifier.ClassifierResult>
+                    <p2:IntelligentKeywordClassifier.DocumentObjectModel>
+                      <InArgument x:TypeArguments="p3:Document">
+                        <DelegateArgumentValue x:TypeArguments="p3:Document">
+                          <DelegateInArgument x:TypeArguments="p3:Document" Name="DocumentObjectModel" />
+                        </DelegateArgumentValue>
+                      </InArgument>
+                    </p2:IntelligentKeywordClassifier.DocumentObjectModel>
+                    <p2:IntelligentKeywordClassifier.DocumentPath>
+                      <InArgument x:TypeArguments="x:String">
+                        <DelegateArgumentValue x:TypeArguments="x:String">
+                          <DelegateInArgument x:TypeArguments="x:String" Name="DocumentPath" />
+                        </DelegateArgumentValue>
+                      </InArgument>
+                    </p2:IntelligentKeywordClassifier.DocumentPath>
+                    <p2:IntelligentKeywordClassifier.DocumentText>
+                      <InArgument x:TypeArguments="x:String">
+                        <DelegateArgumentValue x:TypeArguments="x:String">
+                          <DelegateInArgument x:TypeArguments="x:String" Name="DocumentText" />
+                        </DelegateArgumentValue>
+                      </InArgument>
+                    </p2:IntelligentKeywordClassifier.DocumentText>
+                    <p2:IntelligentKeywordClassifier.DocumentTypes>
+                      <InArgument x:TypeArguments="p4:ClassifierDocumentType[]">
+                        <DelegateArgumentValue x:TypeArguments="p4:ClassifierDocumentType[]">
+                          <DelegateInArgument x:TypeArguments="p4:ClassifierDocumentType[]" Name="DocumentTypes" />
+                        </DelegateArgumentValue>
+                      </InArgument>
+                    </p2:IntelligentKeywordClassifier.DocumentTypes>
+                    <p2:IntelligentKeywordClassifier.PredictionId>
+                      <InArgument x:TypeArguments="x:String">
+                        <DelegateArgumentValue x:TypeArguments="x:String">
+                          <DelegateInArgument x:TypeArguments="x:String" Name="PredictionId" />
+                        </DelegateArgumentValue>
+                      </InArgument>
+                    </p2:IntelligentKeywordClassifier.PredictionId>
+                  </p2:IntelligentKeywordClassifier>
+                </p2:ClassifyDocumentScope.Classifiers>
+              </p2:ClassifyDocumentScope>
+              <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="918,173" sap2010:WorkflowViewState.IdRef="LogMessage_7" Level="Trace" Message="[&quot;Das Dokument wurde als &quot; + ClassificationResults(0).DocumentTypeId + &quot; klassifiziert.&quot;]" />
+              <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="918,173" sap2010:WorkflowViewState.IdRef="LogMessage_9" Level="Trace" Message="[&quot;Starting mit der Extraktion ----&gt;  &quot; + CurrentFile.Name]" />
+              <p5:DataExtractionScope DocumentTypeId="{x:Null}" RuntimeAssetPath="{x:Null}" RuntimeTenantUrl="{x:Null}" ApplyGenerativeValidation="False" ClassificationResult="[ClassificationResults(0)]" DisplayName="Data Extraction Scope" DocumentObjectModel="[DOM]" DocumentPath="[CurrentFile.FullName]" DocumentText="[str_DocumentText]" ExtractionResult="[str_ExtractionResults]" FormatValuesIfPossible="True" GenerativeValidationConfidenceThreshold="99" sap:VirtualizedContainerService.HintSize="918,547" sap2010:WorkflowViewState.IdRef="DataExtractionScope_1" Taxonomy="[DU_taxonomy]" TaxonomyConfiguration="{}{&quot;TaxonomyMappings&quot;:{&quot;UI543c2d810c1e435c8af5da314904f184&quot;:{&quot;DocumentTypeMappings&quot;:{&quot;Mitgleidbescheinigungen.NoCategory.Handwritten_Data&quot;:{&quot;FieldMappings&quot;:{&quot;Mitgleidbescheinigungen.NoCategory.Handwritten_Data.FirstName&quot;:{&quot;OriginalTaxonomyFieldId&quot;:&quot;Mitgleidbescheinigungen.NoCategory.Handwritten_Data.FirstName&quot;,&quot;ExtractorTaxonomyFieldId&quot;:&quot;\&quot;vorname\&quot;&quot;,&quot;ShouldExtract&quot;:true},&quot;Mitgleidbescheinigungen.NoCategory.Handwritten_Data.LastName&quot;:{&quot;OriginalTaxonomyFieldId&quot;:&quot;Mitgleidbescheinigungen.NoCategory.Handwritten_Data.LastName&quot;,&quot;ExtractorTaxonomyFieldId&quot;:&quot;\&quot;nachname\&quot;&quot;,&quot;ShouldExtract&quot;:true},&quot;Mitgleidbescheinigungen.NoCategory.Handwritten_Data.Geburtsdatum&quot;:{&quot;OriginalTaxonomyFieldId&quot;:&quot;Mitgleidbescheinigungen.NoCategory.Handwritten_Data.Geburtsdatum&quot;,&quot;ExtractorTaxonomyFieldId&quot;:&quot;\&quot;geboren_am\&quot;&quot;,&quot;ShouldExtract&quot;:true},&quot;Mitgleidbescheinigungen.NoCategory.Handwritten_Data.Anschrifft&quot;:{&quot;OriginalTaxonomyFieldId&quot;:&quot;Mitgleidbescheinigungen.NoCategory.Handwritten_Data.Anschrifft&quot;,&quot;ExtractorTaxonomyFieldId&quot;:&quot;\&quot;anschrift\&quot;&quot;,&quot;ShouldExtract&quot;:true},&quot;Mitgleidbescheinigungen.NoCategory.Handwritten_Data.Mitgliedsbeginn&quot;:{&quot;OriginalTaxonomyFieldId&quot;:&quot;Mitgleidbescheinigungen.NoCategory.Handwritten_Data.Mitgliedsbeginn&quot;,&quot;ExtractorTaxonomyFieldId&quot;:&quot;\&quot;mitglied_seit\&quot;&quot;,&quot;ShouldExtract&quot;:true},&quot;Mitgleidbescheinigungen.NoCategory.Handwritten_Data.Mitgliedsbetrag&quot;:{&quot;OriginalTaxonomyFieldId&quot;:&quot;Mitgleidbescheinigungen.NoCategory.Handwritten_Data.Mitgliedsbetrag&quot;,&quot;ExtractorTaxonomyFieldId&quot;:&quot;\&quot;betrag\&quot;&quot;,&quot;ShouldExtract&quot;:true},&quot;Mitgleidbescheinigungen.NoCategory.Handwritten_Data.Datum&quot;:{&quot;OriginalTaxonomyFieldId&quot;:&quot;Mitgleidbescheinigungen.NoCategory.Handwritten_Data.Datum&quot;,&quot;ExtractorTaxonomyFieldId&quot;:&quot;\&quot;datum\&quot;&quot;,&quot;ShouldExtract&quot;:true},&quot;Mitgleidbescheinigungen.NoCategory.Handwritten_Data.Unterschrift&quot;:{&quot;OriginalTaxonomyFieldId&quot;:&quot;Mitgleidbescheinigungen.NoCategory.Handwritten_Data.Unterschrift&quot;,&quot;ExtractorTaxonomyFieldId&quot;:null,&quot;ShouldExtract&quot;:false}},&quot;ExtractorDocumentTypeId&quot;:&quot;\&quot;\&quot;&quot;}}},&quot;UI5a5cd9a2a822437e9829b93525eac658&quot;:{&quot;DocumentTypeMappings&quot;:{&quot;Mitgleidbescheinigungen.NoCategory.Handwritten_Data&quot;:{&quot;FieldMappings&quot;:{&quot;Mitgleidbescheinigungen.NoCategory.Handwritten_Data.FirstName&quot;:{&quot;OriginalTaxonomyFieldId&quot;:&quot;Mitgleidbescheinigungen.NoCategory.Handwritten_Data.FirstName&quot;,&quot;ExtractorTaxonomyFieldId&quot;:null,&quot;ShouldExtract&quot;:true},&quot;Mitgleidbescheinigungen.NoCategory.Handwritten_Data.LastName&quot;:{&quot;OriginalTaxonomyFieldId&quot;:&quot;Mitgleidbescheinigungen.NoCategory.Handwritten_Data.LastName&quot;,&quot;ExtractorTaxonomyFieldId&quot;:null,&quot;ShouldExtract&quot;:true},&quot;Mitgleidbescheinigungen.NoCategory.Handwritten_Data.Geburtsdatum&quot;:{&quot;OriginalTaxonomyFieldId&quot;:&quot;Mitgleidbescheinigungen.NoCategory.Handwritten_Data.Geburtsdatum&quot;,&quot;ExtractorTaxonomyFieldId&quot;:null,&quot;ShouldExtract&quot;:true},&quot;Mitgleidbescheinigungen.NoCategory.Handwritten_Data.Anschrifft&quot;:{&quot;OriginalTaxonomyFieldId&quot;:&quot;Mitgleidbescheinigungen.NoCategory.Handwritten_Data.Anschrifft&quot;,&quot;ExtractorTaxonomyFieldId&quot;:null,&quot;ShouldExtract&quot;:true},&quot;Mitgleidbescheinigungen.NoCategory.Handwritten_Data.Mitgliedsbeginn&quot;:{&quot;OriginalTaxonomyFieldId&quot;:&quot;Mitgleidbescheinigungen.NoCategory.Handwritten_Data.Mitgliedsbeginn&quot;,&quot;ExtractorTaxonomyFieldId&quot;:null,&quot;ShouldExtract&quot;:true},&quot;Mitgleidbescheinigungen.NoCategory.Handwritten_Data.Mitgliedsbetrag&quot;:{&quot;OriginalTaxonomyFieldId&quot;:&quot;Mitgleidbescheinigungen.NoCategory.Handwritten_Data.Mitgliedsbetrag&quot;,&quot;ExtractorTaxonomyFieldId&quot;:null,&quot;ShouldExtract&quot;:true},&quot;Mitgleidbescheinigungen.NoCategory.Handwritten_Data.Datum&quot;:{&quot;OriginalTaxonomyFieldId&quot;:&quot;Mitgleidbescheinigungen.NoCategory.Handwritten_Data.Datum&quot;,&quot;ExtractorTaxonomyFieldId&quot;:null,&quot;ShouldExtract&quot;:true},&quot;Mitgleidbescheinigungen.NoCategory.Handwritten_Data.Unterschrift&quot;:{&quot;OriginalTaxonomyFieldId&quot;:&quot;Mitgleidbescheinigungen.NoCategory.Handwritten_Data.Unterschrift&quot;,&quot;ExtractorTaxonomyFieldId&quot;:null,&quot;ShouldExtract&quot;:true}},&quot;ExtractorDocumentTypeId&quot;:null}}},&quot;UI8b78c87ecd6a4bbea1be06328bbd2882&quot;:{&quot;DocumentTypeMappings&quot;:{&quot;Mitgleidbescheinigungen.NoCategory.Handwritten_Data&quot;:{&quot;FieldMappings&quot;:{&quot;Mitgleidbescheinigungen.NoCategory.Handwritten_Data.FirstName&quot;:{&quot;OriginalTaxonomyFieldId&quot;:&quot;Mitgleidbescheinigungen.NoCategory.Handwritten_Data.FirstName&quot;,&quot;ExtractorTaxonomyFieldId&quot;:null,&quot;ShouldExtract&quot;:false},&quot;Mitgleidbescheinigungen.NoCategory.Handwritten_Data.LastName&quot;:{&quot;OriginalTaxonomyFieldId&quot;:&quot;Mitgleidbescheinigungen.NoCategory.Handwritten_Data.LastName&quot;,&quot;ExtractorTaxonomyFieldId&quot;:null,&quot;ShouldExtract&quot;:false},&quot;Mitgleidbescheinigungen.NoCategory.Handwritten_Data.Geburtsdatum&quot;:{&quot;OriginalTaxonomyFieldId&quot;:&quot;Mitgleidbescheinigungen.NoCategory.Handwritten_Data.Geburtsdatum&quot;,&quot;ExtractorTaxonomyFieldId&quot;:null,&quot;ShouldExtract&quot;:false},&quot;Mitgleidbescheinigungen.NoCategory.Handwritten_Data.Anschrifft&quot;:{&quot;OriginalTaxonomyFieldId&quot;:&quot;Mitgleidbescheinigungen.NoCategory.Handwritten_Data.Anschrifft&quot;,&quot;ExtractorTaxonomyFieldId&quot;:null,&quot;ShouldExtract&quot;:false},&quot;Mitgleidbescheinigungen.NoCategory.Handwritten_Data.Mitgliedsbeginn&quot;:{&quot;OriginalTaxonomyFieldId&quot;:&quot;Mitgleidbescheinigungen.NoCategory.Handwritten_Data.Mitgliedsbeginn&quot;,&quot;ExtractorTaxonomyFieldId&quot;:null,&quot;ShouldExtract&quot;:false},&quot;Mitgleidbescheinigungen.NoCategory.Handwritten_Data.Mitgliedsbetrag&quot;:{&quot;OriginalTaxonomyFieldId&quot;:&quot;Mitgleidbescheinigungen.NoCategory.Handwritten_Data.Mitgliedsbetrag&quot;,&quot;ExtractorTaxonomyFieldId&quot;:null,&quot;ShouldExtract&quot;:false},&quot;Mitgleidbescheinigungen.NoCategory.Handwritten_Data.Datum&quot;:{&quot;OriginalTaxonomyFieldId&quot;:&quot;Mitgleidbescheinigungen.NoCategory.Handwritten_Data.Datum&quot;,&quot;ExtractorTaxonomyFieldId&quot;:null,&quot;ShouldExtract&quot;:false},&quot;Mitgleidbescheinigungen.NoCategory.Handwritten_Data.Unterschrift&quot;:{&quot;OriginalTaxonomyFieldId&quot;:&quot;Mitgleidbescheinigungen.NoCategory.Handwritten_Data.Unterschrift&quot;,&quot;ExtractorTaxonomyFieldId&quot;:null,&quot;ShouldExtract&quot;:true}},&quot;ExtractorDocumentTypeId&quot;:null}}}},&quot;ExtractorMinimumConfidence&quot;:{&quot;UI543c2d810c1e435c8af5da314904f184&quot;:&quot;55&quot;,&quot;UI5a5cd9a2a822437e9829b93525eac658&quot;:&quot;0&quot;,&quot;UI8b78c87ecd6a4bbea1be06328bbd2882&quot;:&quot;0&quot;},&quot;ExtractorsAliases&quot;:{},&quot;DocumentTypeOptionsByExtractor&quot;:{&quot;UI543c2d810c1e435c8af5da314904f184&quot;:[{&quot;FieldId&quot;:&quot;&quot;,&quot;SubOptions&quot;:[{&quot;FieldId&quot;:&quot;nachname&quot;,&quot;SubOptions&quot;:null,&quot;Metadata&quot;:null},{&quot;FieldId&quot;:&quot;vorname&quot;,&quot;SubOptions&quot;:null,&quot;Metadata&quot;:null},{&quot;FieldId&quot;:&quot;geboren_am&quot;,&quot;SubOptions&quot;:null,&quot;Metadata&quot;:null},{&quot;FieldId&quot;:&quot;mitglied_seit&quot;,&quot;SubOptions&quot;:null,&quot;Metadata&quot;:null},{&quot;FieldId&quot;:&quot;betrag&quot;,&quot;SubOptions&quot;:null,&quot;Metadata&quot;:null},{&quot;FieldId&quot;:&quot;datum&quot;,&quot;SubOptions&quot;:null,&quot;Metadata&quot;:null},{&quot;FieldId&quot;:&quot;anschrift&quot;,&quot;SubOptions&quot;:null,&quot;Metadata&quot;:null}],&quot;Metadata&quot;:[{&quot;Key&quot;:&quot;schema&quot;,&quot;Value&quot;:&quot;{\&quot;model\&quot;: \&quot;du\&quot;, \&quot;api_version\&quot;: \&quot;1.2\&quot;, \&quot;tags\&quot;: [{\&quot;name\&quot;: \&quot;nachname\&quot;, \&quot;type\&quot;: \&quot;string\&quot;, \&quot;multi_valued\&quot;: false}, {\&quot;name\&quot;: \&quot;vorname\&quot;, \&quot;type\&quot;: \&quot;string\&quot;, \&quot;multi_valued\&quot;: false}, {\&quot;name\&quot;: \&quot;geboren_am\&quot;, \&quot;type\&quot;: \&quot;number\&quot;, \&quot;multi_valued\&quot;: false}, {\&quot;name\&quot;: \&quot;mitglied_seit\&quot;, \&quot;type\&quot;: \&quot;number\&quot;, \&quot;multi_valued\&quot;: false}, {\&quot;name\&quot;: \&quot;betrag\&quot;, \&quot;type\&quot;: \&quot;number\&quot;, \&quot;multi_valued\&quot;: false}, {\&quot;name\&quot;: \&quot;datum\&quot;, \&quot;type\&quot;: \&quot;date\&quot;, \&quot;multi_valued\&quot;: false}, {\&quot;name\&quot;: \&quot;anschrift\&quot;, \&quot;type\&quot;: \&quot;string\&quot;, \&quot;multi_valued\&quot;: false}], \&quot;schema\&quot;: {\&quot;extraction\&quot;: [{\&quot;name\&quot;: \&quot;nachname\&quot;, \&quot;type\&quot;: \&quot;string\&quot;, \&quot;multi_line\&quot;: false, \&quot;post_processing\&quot;: \&quot;first_span\&quot;, \&quot;scoring\&quot;: \&quot;levenshtein\&quot;, \&quot;color\&quot;: \&quot;#ff0022\&quot;, \&quot;hotkey\&quot;: \&quot;n\&quot;, \&quot;display_name\&quot;: \&quot;Nachname\&quot;}, {\&quot;name\&quot;: \&quot;vorname\&quot;, \&quot;type\&quot;: \&quot;string\&quot;, \&quot;multi_line\&quot;: false, \&quot;post_processing\&quot;: \&quot;first_span\&quot;, \&quot;scoring\&quot;: \&quot;levenshtein\&quot;, \&quot;color\&quot;: \&quot;#ff0088\&quot;, \&quot;hotkey\&quot;: \&quot;v\&quot;, \&quot;display_name\&quot;: \&quot;Vorname\&quot;}, {\&quot;name\&quot;: \&quot;geboren_am\&quot;, \&quot;type\&quot;: \&quot;number\&quot;, \&quot;multi_line\&quot;: false, \&quot;post_processing\&quot;: \&quot;first_span\&quot;, \&quot;color\&quot;: \&quot;#40ff8c\&quot;, \&quot;hotkey\&quot;: \&quot;g\&quot;, \&quot;display_name\&quot;: \&quot;geboren_am\&quot;}, {\&quot;name\&quot;: \&quot;mitglied_seit\&quot;, \&quot;type\&quot;: \&quot;number\&quot;, \&quot;multi_line\&quot;: false, \&quot;post_processing\&quot;: \&quot;first_span\&quot;, \&quot;color\&quot;: \&quot;#4400ff\&quot;, \&quot;hotkey\&quot;: \&quot;m\&quot;, \&quot;display_name\&quot;: \&quot;Mitglied_Seit\&quot;}, {\&quot;name\&quot;: \&quot;betrag\&quot;, \&quot;type\&quot;: \&quot;number\&quot;, \&quot;multi_line\&quot;: false, \&quot;post_processing\&quot;: \&quot;first_span\&quot;, \&quot;color\&quot;: \&quot;#2d8020\&quot;, \&quot;hotkey\&quot;: \&quot;b\&quot;, \&quot;display_name\&quot;: \&quot;Betrag\&quot;}, {\&quot;name\&quot;: \&quot;datum\&quot;, \&quot;type\&quot;: \&quot;date\&quot;, \&quot;multi_line\&quot;: false, \&quot;post_processing\&quot;: \&quot;first_span\&quot;, \&quot;color\&quot;: \&quot;#0099bf\&quot;, \&quot;hotkey\&quot;: \&quot;d\&quot;, \&quot;display_name\&quot;: \&quot;Datum\&quot;}, {\&quot;name\&quot;: \&quot;anschrift\&quot;, \&quot;type\&quot;: \&quot;string\&quot;, \&quot;multi_line\&quot;: false, \&quot;post_processing\&quot;: \&quot;first_span\&quot;, \&quot;scoring\&quot;: \&quot;levenshtein\&quot;, \&quot;color\&quot;: \&quot;#00bfb3\&quot;, \&quot;hotkey\&quot;: \&quot;a\&quot;, \&quot;display_name\&quot;: \&quot;Anschrift\&quot;}], \&quot;classification\&quot;: {}, \&quot;version\&quot;: 1.1, \&quot;base_model\&quot;: {\&quot;id\&quot;: null}}, \&quot;release\&quot;: \&quot;ga\&quot;}&quot;}]}],&quot;UI5a5cd9a2a822437e9829b93525eac658&quot;:[],&quot;UI8b78c87ecd6a4bbea1be06328bbd2882&quot;:[]}}">
+                <p5:DataExtractionScope.AvailableAssetPaths>
+                  <x:Array Type="x:String">
+                    <x:String>adesso SE - Demo/ACME System 1 Login Credentials Tobias Karhof</x:String>
+                    <x:String>adesso SE - Demo/UiBank</x:String>
+                    <x:String>adesso SE - Default/API_Aleph_Token</x:String>
+                    <x:String>adesso SE - Default/Email_Xtract</x:String>
+                    <x:String>Digital Automation/Pronova/Technical/DocumentDatabase</x:String>
+                  </x:Array>
+                </p5:DataExtractionScope.AvailableAssetPaths>
+                <p5:DataExtractionScope.Extractors>
+                  <p6:MachineLearningExtractor Endpoint="{x:Null}" ApiKey="[str_API_KEY]" Configuration="{}{&quot;Endpoint&quot;:&quot;&quot;,&quot;ApiKey&quot;:&quot;4SoCF6VDwDwfygNV6/qcOQXsTLr0ZDjmB1PTC6DWENJbobgRaoWH6NAaRsAgTO8LE4lF83r6jZjxiMa+B3coSw==&quot;,&quot;SelectedMLSkill&quot;:&quot;Mitgliedsbescheinigungen_v1&quot;,&quot;AvailableMLSkills&quot;:[&quot;Mitgliedsbescheinigungen_v1&quot;,&quot;pfizer_Corona&quot;,&quot;V1&quot;]}" DisplayName="Machine Learning Extractor" sap:VirtualizedContainerService.HintSize="283,193" sap2010:WorkflowViewState.IdRef="MachineLearningExtractor_1" PersistenceId="UI543c2d810c1e435c8af5da314904f184" RetryOnFailure="True" SelectedMLSkill="Mitgliedsbescheinigungen_v1" Timeout="100000" UseServerSideOCR="False">
+                    <p6:MachineLearningExtractor.AvailableMLSkills>
+                      <sc:BindingList x:TypeArguments="x:String" AllowEdit="True" AllowNew="False" AllowRemove="True" RaiseListChangedEvents="True">
+                        <x:String>Mitgliedsbescheinigungen_v1</x:String>
+                        <x:String>pfizer_Corona</x:String>
+                        <x:String>V1</x:String>
+                      </sc:BindingList>
+                    </p6:MachineLearningExtractor.AvailableMLSkills>
+                    <p6:MachineLearningExtractor.DocumentBounds>
+                      <InArgument x:TypeArguments="p8:ResultsDocumentBounds">
+                        <DelegateArgumentValue x:TypeArguments="p8:ResultsDocumentBounds">
+                          <DelegateInArgument x:TypeArguments="p8:ResultsDocumentBounds" Name="DocumentBounds" />
+                        </DelegateArgumentValue>
+                      </InArgument>
+                    </p6:MachineLearningExtractor.DocumentBounds>
+                    <p6:MachineLearningExtractor.DocumentObjectModel>
+                      <InArgument x:TypeArguments="p3:Document">
+                        <DelegateArgumentValue x:TypeArguments="p3:Document">
+                          <DelegateInArgument x:TypeArguments="p3:Document" Name="DocumentObjectModel" />
+                        </DelegateArgumentValue>
+                      </InArgument>
+                    </p6:MachineLearningExtractor.DocumentObjectModel>
+                    <p6:MachineLearningExtractor.DocumentPath>
+                      <InArgument x:TypeArguments="x:String">
+                        <DelegateArgumentValue x:TypeArguments="x:String">
+                          <DelegateInArgument x:TypeArguments="x:String" Name="DocumentPath" />
+                        </DelegateArgumentValue>
+                      </InArgument>
+                    </p6:MachineLearningExtractor.DocumentPath>
+                    <p6:MachineLearningExtractor.DocumentText>
+                      <InArgument x:TypeArguments="x:String">
+                        <DelegateArgumentValue x:TypeArguments="x:String">
+                          <DelegateInArgument x:TypeArguments="x:String" Name="DocumentText" />
+                        </DelegateArgumentValue>
+                      </InArgument>
+                    </p6:MachineLearningExtractor.DocumentText>
+                    <p6:MachineLearningExtractor.ExtractorDocumentType>
+                      <InArgument x:TypeArguments="p7:ExtractorDocumentType">
+                        <DelegateArgumentValue x:TypeArguments="p7:ExtractorDocumentType">
+                          <DelegateInArgument x:TypeArguments="p7:ExtractorDocumentType" Name="ExtractorDocumentType" />
+                        </DelegateArgumentValue>
+                      </InArgument>
+                    </p6:MachineLearningExtractor.ExtractorDocumentType>
+                    <p6:MachineLearningExtractor.ExtractorResult>
+                      <OutArgument x:TypeArguments="p7:ExtractorResult">
+                        <DelegateArgumentReference x:TypeArguments="p7:ExtractorResult">
+                          <DelegateOutArgument x:TypeArguments="p7:ExtractorResult" Name="ExtractorResult" />
+                        </DelegateArgumentReference>
+                      </OutArgument>
+                    </p6:MachineLearningExtractor.ExtractorResult>
+                    <p6:MachineLearningExtractor.PredictionId>
+                      <InArgument x:TypeArguments="x:String">
+                        <DelegateArgumentValue x:TypeArguments="x:String">
+                          <DelegateInArgument x:TypeArguments="x:String" Name="PredictionId" />
+                        </DelegateArgumentValue>
+                      </InArgument>
+                    </p6:MachineLearningExtractor.PredictionId>
+                  </p6:MachineLearningExtractor>
+                  <p6:GenerativeExtractor RuntimeAssetPath="{x:Null}" RuntimeTenantUrl="{x:Null}" DisplayName="Generative Extractor" GenerativeModelsForDocumentType="{}{&quot;Mitgleidbescheinigungen.NoCategory.Handwritten_Data&quot;:{&quot;Id&quot;:&quot;generative_extractor&quot;,&quot;Name&quot;:&quot;Long Document Simple Layout Extractor&quot;,&quot;DocumentTypeId&quot;:&quot;&quot;,&quot;Status&quot;:7,&quot;DetailsUrl&quot;:&quot;https://cloud.uipath.com:443/0cb0c401-776c-4a9c-9ac7-b4a5d48398e7/b0d05774-f6dd-4259-b61c-61fbaa81caa3/du_/api/framework/projects/00000000-0000-0000-0000-000000000001/extractors/generative_extractor?api-version=1.1&quot;,&quot;SyncUrl&quot;:&quot;https://cloud.uipath.com:443/0cb0c401-776c-4a9c-9ac7-b4a5d48398e7/b0d05774-f6dd-4259-b61c-61fbaa81caa3/du_/api/framework/projects/00000000-0000-0000-0000-000000000001/extractors/generative_extractor/extraction?api-version=1.1&quot;,&quot;AsyncUrl&quot;:&quot;https://cloud.uipath.com:443/0cb0c401-776c-4a9c-9ac7-b4a5d48398e7/b0d05774-f6dd-4259-b61c-61fbaa81caa3/du_/api/framework/projects/00000000-0000-0000-0000-000000000001/extractors/generative_extractor/extraction/start?api-version=1.1&quot;,&quot;ProjectVersion&quot;:null,&quot;ProjectVersionName&quot;:null,&quot;ResourceType&quot;:&quot;Generative&quot;,&quot;Description&quot;:null}}" sap:VirtualizedContainerService.HintSize="282,193" sap2010:WorkflowViewState.IdRef="GenerativeExtractor_1" PersistenceId="UI5a5cd9a2a822437e9829b93525eac658" Prompt="{}{&quot;Mitgleidbescheinigungen.NoCategory.Handwritten_Data.FirstName&quot;:&quot;Extrahiere den Vornamen.&quot;,&quot;Mitgleidbescheinigungen.NoCategory.Handwritten_Data.LastName&quot;:&quot;Extrahiere den Nachnamen.&quot;,&quot;Mitgleidbescheinigungen.NoCategory.Handwritten_Data.Geburtsdatum&quot;:&quot;Wann ist die Person geboren?&quot;,&quot;Mitgleidbescheinigungen.NoCategory.Handwritten_Data.Anschrifft&quot;:&quot;Extrahiere die Anschrift.&quot;,&quot;Mitgleidbescheinigungen.NoCategory.Handwritten_Data.Mitgliedsbeginn&quot;:&quot;Seit wann ist die Person Mitglied?&quot;,&quot;Mitgleidbescheinigungen.NoCategory.Handwritten_Data.Mitgliedsbetrag&quot;:&quot;Wie hoch ist der Betrag?&quot;,&quot;Mitgleidbescheinigungen.NoCategory.Handwritten_Data.Monatlich&quot;:&quot;Erfolgt die Bezahlung monatlich?&quot;,&quot;Mitgleidbescheinigungen.NoCategory.Handwritten_Data.Quartal&quot;:&quot;Erfolgt die Bezahlung quartalsweise?&quot;,&quot;Mitgleidbescheinigungen.NoCategory.Handwritten_Data.Halbjährlich&quot;:&quot;Erfolgt die Bezahlung halbjährlich?&quot;,&quot;Mitgleidbescheinigungen.NoCategory.Handwritten_Data.Jährlich&quot;:&quot;Erfolgt die Bezahlung jährlich?&quot;,&quot;Mitgleidbescheinigungen.NoCategory.Handwritten_Data.Datum&quot;:&quot;Was ist das Datum?&quot;,&quot;Mitgleidbescheinigungen.NoCategory.Handwritten_Data.Unterschrift&quot;:&quot;Ist das Dokument unterschrieben?&quot;,&quot;Mitgleidbescheinigungen.NoCategory.Handwritten_Data.neue_Mitglied&quot;:&quot;Ist das ein neues Mitglied?&quot;,&quot;Mitgleidbescheinigungen.NoCategory.Handwritten_Data.alte_Mitglied&quot;:&quot;Ist das ein altes Mitglied?&quot;}" RetryOnFailure="True" Timeout="3600000">
+                    <p6:GenerativeExtractor.AvailableAssetPaths>
+                      <x:Array Type="x:String">
+                        <x:String>adesso SE - Demo/ACME System 1 Login Credentials Tobias Karhof</x:String>
+                        <x:String>adesso SE - Demo/UiBank</x:String>
+                        <x:String>adesso SE - Default/API_Aleph_Token</x:String>
+                        <x:String>adesso SE - Default/Email_Xtract</x:String>
+                        <x:String>Digital Automation/Pronova/Technical/DocumentDatabase</x:String>
+                      </x:Array>
+                    </p6:GenerativeExtractor.AvailableAssetPaths>
+                    <p6:GenerativeExtractor.DocumentBounds>
+                      <InArgument x:TypeArguments="p8:ResultsDocumentBounds">
+                        <DelegateArgumentValue x:TypeArguments="p8:ResultsDocumentBounds">
+                          <DelegateInArgument x:TypeArguments="p8:ResultsDocumentBounds" Name="DocumentBounds" />
+                        </DelegateArgumentValue>
+                      </InArgument>
+                    </p6:GenerativeExtractor.DocumentBounds>
+                    <p6:GenerativeExtractor.DocumentObjectModel>
+                      <InArgument x:TypeArguments="p3:Document">
+                        <DelegateArgumentValue x:TypeArguments="p3:Document">
+                          <DelegateInArgument x:TypeArguments="p3:Document" Name="DocumentObjectModel" />
+                        </DelegateArgumentValue>
+                      </InArgument>
+                    </p6:GenerativeExtractor.DocumentObjectModel>
+                    <p6:GenerativeExtractor.DocumentPath>
+                      <InArgument x:TypeArguments="x:String">
+                        <DelegateArgumentValue x:TypeArguments="x:String">
+                          <DelegateInArgument x:TypeArguments="x:String" Name="DocumentPath" />
+                        </DelegateArgumentValue>
+                      </InArgument>
+                    </p6:GenerativeExtractor.DocumentPath>
+                    <p6:GenerativeExtractor.DocumentText>
+                      <InArgument x:TypeArguments="x:String">
+                        <DelegateArgumentValue x:TypeArguments="x:String">
+                          <DelegateInArgument x:TypeArguments="x:String" Name="DocumentText" />
+                        </DelegateArgumentValue>
+                      </InArgument>
+                    </p6:GenerativeExtractor.DocumentText>
+                    <p6:GenerativeExtractor.ExtractorDocumentType>
+                      <InArgument x:TypeArguments="p7:ExtractorDocumentType">
+                        <DelegateArgumentValue x:TypeArguments="p7:ExtractorDocumentType">
+                          <DelegateInArgument x:TypeArguments="p7:ExtractorDocumentType" Name="ExtractorDocumentType" />
+                        </DelegateArgumentValue>
+                      </InArgument>
+                    </p6:GenerativeExtractor.ExtractorDocumentType>
+                    <p6:GenerativeExtractor.ExtractorResult>
+                      <OutArgument x:TypeArguments="p7:ExtractorResult">
+                        <DelegateArgumentReference x:TypeArguments="p7:ExtractorResult">
+                          <DelegateOutArgument x:TypeArguments="p7:ExtractorResult" Name="ExtractorResult" />
+                        </DelegateArgumentReference>
+                      </OutArgument>
+                    </p6:GenerativeExtractor.ExtractorResult>
+                    <p6:GenerativeExtractor.PredictionId>
+                      <InArgument x:TypeArguments="x:String">
+                        <DelegateArgumentValue x:TypeArguments="x:String">
+                          <DelegateInArgument x:TypeArguments="x:String" Name="PredictionId" />
+                        </DelegateArgumentValue>
+                      </InArgument>
+                    </p6:GenerativeExtractor.PredictionId>
+                  </p6:GenerativeExtractor>
+                  <p5:FormExtractor SerializedSignatureFields="{x:Null}" ApiKey="[str_API_KEY]" DisplayName="Form Extractor_Unterschrift" Endpoint="https://du.uipath.com/svc/formextractor" sap:VirtualizedContainerService.HintSize="283,193" sap2010:WorkflowViewState.IdRef="FormExtractor_1" MinOverlapPercentage="65" PersistenceId="UI8b78c87ecd6a4bbea1be06328bbd2882" SendDocumentsForAlgorithmImprovements="True" SerializedSettings="{}{&quot;DocTypeSettings&quot;:[{&quot;DocumentTypeId&quot;:&quot;Mitgleidbescheinigungen.NoCategory.Handwritten_Data&quot;,&quot;SignatureFields&quot;:[{&quot;FieldId&quot;:&quot;Mitgleidbescheinigungen.NoCategory.Handwritten_Data.Unterschrift&quot;}],&quot;HandwritingFields&quot;:[],&quot;BooleanSynonymsForYes&quot;:[],&quot;BooleanSynonymsForNo&quot;:[],&quot;CaseSensitiveSynonyms&quot;:false}]}" SerializedTemplates="[{&quot;DocumentTypeId&quot;:&quot;Mitgleidbescheinigungen.NoCategory.Handwritten_Data&quot;,&quot;FormId&quot;:&quot;bfc9c293&quot;,&quot;FormName&quot;:&quot;Mitglied_Unterschrift&quot;,&quot;OriginalFileExtension&quot;:&quot;pdf&quot;,&quot;Pages&quot;:[{&quot;Page&quot;:0,&quot;Size&quot;:[0.0,0.0,595.0,868.0],&quot;SkewAngle&quot;:-0.1,&quot;Evidence&quot;:[{&quot;Text&quot;:&quot;Mitgliedsbestätigung&quot;,&quot;Box&quot;:[92.81,200.82,168.29,20.0]},{&quot;Text&quot;:&quot;Hiermit&quot;,&quot;Box&quot;:[210.96,87.48,33.6,9.6]},{&quot;Text&quot;:&quot;bestätigen&quot;,&quot;Box&quot;:[210.69,122.95,47.74,11.47]},{&quot;Text&quot;:&quot;wir,&quot;,&quot;Box&quot;:[210.69,172.29,17.34,10.93]},{&quot;Text&quot;:&quot;dass&quot;,&quot;Box&quot;:[210.42,191.75,22.94,10.13]},{&quot;Text&quot;:&quot;Verein&quot;,&quot;Box&quot;:[385.64,280.56,31.2,9.87]}],&quot;Fields&quot;:[{&quot;Field&quot;:&quot;Mitgleidbescheinigungen.NoCategory.Handwritten_Data.Monatlich&quot;,&quot;Box&quot;:[445.7225,83.7013,22.5942,27.2158]},{&quot;Field&quot;:&quot;Mitgleidbescheinigungen.NoCategory.Handwritten_Data.Quartal&quot;,&quot;Box&quot;:[438.5334,165.3487,26.7023,36.9724]},{&quot;Field&quot;:&quot;Mitgleidbescheinigungen.NoCategory.Handwritten_Data.Halbjährlich&quot;,&quot;Box&quot;:[441.6144,257.7796,26.7023,36.9724]},{&quot;Field&quot;:&quot;Mitgleidbescheinigungen.NoCategory.Handwritten_Data.Jährlich&quot;,&quot;Box&quot;:[442.6414,349.1835,27.2158,35.4319]},{&quot;Field&quot;:&quot;Mitgleidbescheinigungen.NoCategory.Handwritten_Data.Unterschrift&quot;,&quot;Box&quot;:[610.0441,334.8053,194.1049,50.837]},{&quot;Field&quot;:&quot;Mitgleidbescheinigungen.NoCategory.Handwritten_Data.neue_Mitglied&quot;,&quot;Box&quot;:[158.1596,78.0528,29.2698,24.1347]},{&quot;Field&quot;:&quot;Mitgleidbescheinigungen.NoCategory.Handwritten_Data.alte_Mitglied&quot;,&quot;Box&quot;:[125.8088,79.5933,28.2428,27.7293]}],&quot;Tables&quot;:[]}],&quot;AnchorBasedConfiguration&quot;:{&quot;AnchorBasedFieldConfiguration&quot;:[]}}]" Timeout="100000">
+                    <p5:FormExtractor.DocumentBounds>
+                      <InArgument x:TypeArguments="p8:ResultsDocumentBounds">
+                        <DelegateArgumentValue x:TypeArguments="p8:ResultsDocumentBounds">
+                          <DelegateInArgument x:TypeArguments="p8:ResultsDocumentBounds" Name="DocumentBounds" />
+                        </DelegateArgumentValue>
+                      </InArgument>
+                    </p5:FormExtractor.DocumentBounds>
+                    <p5:FormExtractor.DocumentObjectModel>
+                      <InArgument x:TypeArguments="p3:Document">
+                        <DelegateArgumentValue x:TypeArguments="p3:Document">
+                          <DelegateInArgument x:TypeArguments="p3:Document" Name="DocumentObjectModel" />
+                        </DelegateArgumentValue>
+                      </InArgument>
+                    </p5:FormExtractor.DocumentObjectModel>
+                    <p5:FormExtractor.DocumentPath>
+                      <InArgument x:TypeArguments="x:String">
+                        <DelegateArgumentValue x:TypeArguments="x:String">
+                          <DelegateInArgument x:TypeArguments="x:String" Name="DocumentPath" />
+                        </DelegateArgumentValue>
+                      </InArgument>
+                    </p5:FormExtractor.DocumentPath>
+                    <p5:FormExtractor.DocumentText>
+                      <InArgument x:TypeArguments="x:String">
+                        <DelegateArgumentValue x:TypeArguments="x:String">
+                          <DelegateInArgument x:TypeArguments="x:String" Name="DocumentText" />
+                        </DelegateArgumentValue>
+                      </InArgument>
+                    </p5:FormExtractor.DocumentText>
+                    <p5:FormExtractor.ExtractorDocumentType>
+                      <InArgument x:TypeArguments="p7:ExtractorDocumentType">
+                        <DelegateArgumentValue x:TypeArguments="p7:ExtractorDocumentType">
+                          <DelegateInArgument x:TypeArguments="p7:ExtractorDocumentType" Name="ExtractorDocumentType" />
+                        </DelegateArgumentValue>
+                      </InArgument>
+                    </p5:FormExtractor.ExtractorDocumentType>
+                    <p5:FormExtractor.ExtractorResult>
+                      <OutArgument x:TypeArguments="p7:ExtractorResult">
+                        <DelegateArgumentReference x:TypeArguments="p7:ExtractorResult">
+                          <DelegateOutArgument x:TypeArguments="p7:ExtractorResult" Name="ExtractorResult" />
+                        </DelegateArgumentReference>
+                      </OutArgument>
+                    </p5:FormExtractor.ExtractorResult>
+                    <p5:FormExtractor.PredictionId>
+                      <InArgument x:TypeArguments="x:String">
+                        <DelegateArgumentValue x:TypeArguments="x:String">
+                          <DelegateInArgument x:TypeArguments="x:String" Name="PredictionId" />
+                        </DelegateArgumentValue>
+                      </InArgument>
+                    </p5:FormExtractor.PredictionId>
+                  </p5:FormExtractor>
+                </p5:DataExtractionScope.Extractors>
+              </p5:DataExtractionScope>
+              <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="918,173" sap2010:WorkflowViewState.IdRef="LogMessage_10" Level="Trace" Message="[&quot;Fertig mit der Extraktion&quot;]" />
+              <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="918,173" sap2010:WorkflowViewState.IdRef="LogMessage_11" Level="Trace" Message="[&quot;Starting mit der Validation&quot;]" />
+              <p:PresentValidationStation FieldsValidationConfidence="{x:Null}" AutomaticExtractionResults="[str_ExtractionResults]" DisplayMode="Classic" DisplayName="Present Validation Station" DocumentObjectModel="[DOM]" DocumentPath="[CurrentFile.FullName]" DocumentText="[str_DocumentText]" EnableRTLControls="False" sap:VirtualizedContainerService.HintSize="918,398" sap2010:WorkflowViewState.IdRef="PresentValidationStation_1" ShowOnlyRelevantPageRange="False" Taxonomy="[DU_taxonomy]" ValidatedExtractionResults="[str_Validation_Results]" />
+              <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="918,173" sap2010:WorkflowViewState.IdRef="LogMessage_12" Level="Trace" Message="[&quot;Exportieren der Validation&quot;]" />
+              <p5:ExportExtractionResults DataSet="[DU_dt]" DisplayName="Export Extraction Results" ExtractionResult="[str_Validation_Results]" sap:VirtualizedContainerService.HintSize="918,206" sap2010:WorkflowViewState.IdRef="ExportExtractionResults_1" IncludeConfidence="False" IncludeOCRConfidence="False" />
+              <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="918,173" sap2010:WorkflowViewState.IdRef="LogMessage_13" Level="Trace" Message="[&quot;Exportieren der Validation zu  Excel&quot;]" />
+              <ui:AppendRange WorkbookPathResource="{x:Null}" DataTable="[DU_dt.Tables(0)]" DisplayName="Append Range Workbook" sap:VirtualizedContainerService.HintSize="918,148" sap2010:WorkflowViewState.IdRef="AppendRange_1" SheetName="Tabelle1" WorkbookPath="output\output.xlsx" />
+              <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="918,164" sap2010:WorkflowViewState.IdRef="LogMessage_14" Level="Trace" Message="[&quot;Done&quot;]" />
+            </Sequence>
+          </Sequence>
+        </ActivityAction>
+      </ui:ForEachFileX.Body>
+    </ui:ForEachFileX>
+  </Sequence>
+</Activity>
